@@ -199,5 +199,5 @@ end
 %% ====================== End of Main Program ========================== %%
 
 % Outputs
-varargout{1} = dilLabels;
+varargout{1} = surfLabels;
 return;
