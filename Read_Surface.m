@@ -72,6 +72,14 @@ if nargin > 1
                             else
                                 boolVar = 0;
                             end
+                        case 'pial.H'
+                            mapTemp = [surfFile(1:ind) charVal];
+                            if exist(mapTemp,'file')
+                                [mapValues, ctab] = read_cfiles(mapTemp);
+                                boolVar = 1;
+                            else
+                                boolVar = 0;
+                            end
                         case 'pial_lgi'
                             mapTemp = [surfFile(1:ind) charVal];
                             if exist(mapTemp,'file')

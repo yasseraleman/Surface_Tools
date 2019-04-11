@@ -392,10 +392,12 @@ if contVals
     set(hc,'Color',([1 1 1] - figColor)*.8)
 end
 axis image;
+axis off;
 
 % hc = camlight;
 % set(hc, 'Color',[1 1 1]*lightIntensity);
 AxID = gca;
+AxID.Clipping = 'off';
 if isempty(findall(AxID.Children,'Type','light'))
     
     view(3);

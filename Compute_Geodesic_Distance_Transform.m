@@ -99,7 +99,7 @@ switch method
         distances = zeros(N,1);              %find distances to all vertices of the mesh (actual pathes are not computed)
         [source_id, distTransf] = geodesic_distance_and_source(algorithm);     %find distances to all vertices of the mesh; in this example we have a single source, so source_id is always equal to 1
 
-        
+        geodesic_delete;
     case 'manhattan'
         geoDist = graphallshortestpaths(graphSurf); % Geodesic Distance Matrix
         geoDist(logical(eye(size(geoDist)))) = Inf; %

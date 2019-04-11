@@ -91,8 +91,9 @@ else
     ind = find(sum(logical(Coord),2) == 2);
     Coord = Coord(ind,:);
     Distance = Distance(ind);
-    ind = sub2ind(size(Graph),Coord(:,1),Coord(:,2));
-    Graph(ind) = Distance; % Grafo de Distancia
+    [C,iak,~] = unique(Coord,'rows','last');
+    newDist = Distance(iak);
+    Graph = sparse(C(:,1),C(:,2),newDist);
 end
 varargout{1} = Graph;
 %% ==========================End of Main Program ============================= %%

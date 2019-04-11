@@ -87,8 +87,8 @@ if nargout > 1
     return;
 end
 %% ========================= End of Checking Inputs ==================== %%
-disp(' ')
-disp('Smoothing Cortical Map...');
+% disp(' ')
+% disp('Smoothing Cortical Map...');
 tic;
 %% ========================= Main Program ============================== %%
 % ---------------- Smoothing Curvature Map

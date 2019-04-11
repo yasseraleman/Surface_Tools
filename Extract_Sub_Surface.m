@@ -132,6 +132,11 @@ for i = 1:length(stindex)
 end
 %% ====================== End of Main Program ========================== %%
 % Outputs
+if ~exist('subSurf','var')
+    subSurf = Surf;
+    subsurfIndexes{1} = find(Surf.SurfData.faces(:));
+end
+
 varargout{1} = subSurf;
 varargout{2} = subsurfLabels;
 varargout{3} = subsurfIndexes;
