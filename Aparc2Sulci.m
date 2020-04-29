@@ -25,11 +25,6 @@ function varargout = Aparc2Sulci(varargin);
 % November 13th 2014
 % Version $1.0
 
-
-nargin = 2;
-varargin{1} = '/media/MyDisk/PROCESSING_RESULTS/5-freesurfer_processing/fsaverage/surf/lh.inflated';
-varargin{2} = '/media/MyDisk/PROCESSING_RESULTS/5-freesurfer_processing/fsaverage/label/lh.aparc.annot';
-
 %% ============================= Checking Inputs ======================= %%
 if nargin < 2
     error('Two Inputs are mandatory');

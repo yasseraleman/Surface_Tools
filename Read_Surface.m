@@ -49,8 +49,11 @@ if nargin > 1
         
         if ischar(charVal)
             if exist(charVal,'file')
-                [mapValues, ctab] = read_cfiles(charVal);
-                boolVar = 1;
+                try
+                    [mapValues, ctab] = read_cfiles(charVal);
+                    boolVar = 1;
+                catch                     
+                end
             end
             if isempty(strfind(charVal,filesep))
                 ind = strfind(surfFile,'.');
@@ -65,6 +68,22 @@ if nargin > 1
                                 boolVar = 0;
                             end
                         case 'curv'
+                            mapTemp = [surfFile(1:ind) charVal];
+                            if exist(mapTemp,'file')
+                                [mapValues, ctab] = read_cfiles(mapTemp);
+                                boolVar = 1;
+                            else
+                                boolVar = 0;
+                            end
+                        case 'curv.pial'
+                            mapTemp = [surfFile(1:ind) charVal];
+                            if exist(mapTemp,'file')
+                                [mapValues, ctab] = read_cfiles(mapTemp);
+                                boolVar = 1;
+                            else
+                                boolVar = 0;
+                            end
+                        case 'width'
                             mapTemp = [surfFile(1:ind) charVal];
                             if exist(mapTemp,'file')
                                 [mapValues, ctab] = read_cfiles(mapTemp);

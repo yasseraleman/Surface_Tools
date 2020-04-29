@@ -33,7 +33,7 @@ else
     Surfa = Surface_Checking(Surfa);
     % Parameters
     transpVal = 1; % Opacity
-    colMap = 'jet'; % ColorMap
+    colMap = 'viridis'; % ColorMap
     newFig = 'y'; %
     lightIntensity = .2; % Light Intensity
     noLight = 0; % Boolean variable to activate Lights

@@ -94,9 +94,9 @@ for i = 1:length(stindex)
         %       allEdges = allEdges(find(sum(ismember(allEdges,ind),2)==2),:);
         [~,b] = ismember(allEdges,ind);
         
-        Mat = sparse(length(ind),length(ind));
-        indmat = sub2ind(size(Mat),[b(:,1) ;b(:,2)],[b(:,2);b(:,1)]);
-        Mat(indmat) = 1;
+        temp =  [ [b(:,1) ;b(:,2)] [b(:,2);b(:,1)] ];
+        [C,iak,~] = unique(temp,'rows','last');
+        Mat = sparse(C(:,1),C(:,2),1);
         tempMat = Label_Graph_Components(Mat);
         
         if opts.keep
